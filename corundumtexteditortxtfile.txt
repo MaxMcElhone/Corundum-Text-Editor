@@ -1,5 +1,7 @@
 corundum text editor - 8/21/18
 
+Using Ruby v2.4.4-2
+
 Goals:
 	Online text editor
 	Ruby Backend
