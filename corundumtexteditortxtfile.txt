@@ -1,0 +1,6 @@
+corundum text editor - 8/21/18
+
+Goals:
+	Online text editor
+	Ruby Backend
+	Online Saving
