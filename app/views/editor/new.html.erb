@@ -1,0 +1,16 @@
+<h1>Add File</h1>
+  <%= form_for :document, url: editor_path do |f| %>
+    <h3>
+      <%= f.label :title %><br />
+      <%= f.text_field :title %>
+    </h3>
+
+    <h4>
+      <%= f.label :body %><br />
+      <%= f.text_field :body %>
+    </h4>
+    <p>
+      <%= f.submit %>
+    </p>
+
+  <% end %>
