@@ -8,4 +8,5 @@ class EditorController < ApplicationController
   end
   def create
     render plain: params[:document].inspect
+  end
 end
