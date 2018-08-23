@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'editor#index'
+  root 'editor#index', as: 'home'
   resources :editor
   post "editor/new"    => "editor#create"
 end

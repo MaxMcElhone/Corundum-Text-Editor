@@ -1,6 +1,15 @@
-<h1>Hello World</h1>
+<h1>All Documents</h1>
+<% @documents.each do |d| %>
+	<h3>
+		<%= d.title %>
+	</h3>
+	<h6>
+		<%= d.body %>
+	</h6>
+<% end %>
 
-	<div>
+
+	<!-- <div>
 		<form action="#">
 			<input type="text"  />
 			<textarea style="resize:none;" name="textedit">
@@ -8,4 +17,4 @@
 			</textarea>
 
 		</form>
-	</div>
+	</div> -->
