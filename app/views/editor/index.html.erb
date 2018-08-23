@@ -1,13 +1,21 @@
-<h1>All Documents</h1>
-<% @documents.each do |d| %>
-	<h3>
-		<%= d.title %>
-	</h3>
-	<h6>
-		<%= d.body %>
-	</h6>
-<% end %>
-
+<h1 class="jumbotron w-100" align="center">
+	All Documents
+</h1>
+<div class="container">
+	<% @documents.each do |d| %>
+		<div class="card bg-dark text-white">
+			<div class="card-body">
+				<h3>
+					<%= d.title %>
+				</h3>
+				<h6>
+					<%= d.body %>
+				</h6>
+			</div>
+		</div>
+		<br>
+		<% end %>
+</div>
 
 	<!-- <div>
 		<form action="#">

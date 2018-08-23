@@ -4,7 +4,7 @@ class EditorController < ApplicationController
   end
 
   def new
-
+    @document = Document.new
   end
 
   def show
@@ -17,10 +17,12 @@ class EditorController < ApplicationController
     @document = Document.new(document_params)
 
     #save the object
-    @document.save
-
-    #redirect to that page
-    redirect_to action: "show", id: @document.id
+    if(@document.save)
+      #redirect to that page
+      redirect_to action: "show", id: @document.id
+    else
+      render 'new'
+    end
   end
   #method to say what paramaters are needed to create the object
   private def document_params
