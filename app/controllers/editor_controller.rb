@@ -4,7 +4,7 @@ class EditorController < ApplicationController
   end
 
   def new
-
+    
   end
   def create
     render plain: params[:document].inspect
