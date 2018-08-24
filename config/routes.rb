@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :editor
   #the one that it didn't make but I needed
   post "editor/new"    => "editor#create"
+
 end

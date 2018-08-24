@@ -1,6 +1,10 @@
-<h2>
+<h2 class="jumbotron mb-0" align="center">
   <%= @document.title %>
 </h2>
-<p>
-  <%= @document.body %>
-</p>
+<div class="container-fluid display-3 bg-dark text-white pt-3 pb-3">
+
+  <h5 class="container">
+    <%= @document.body %>
+  </h5>
+  <%= link_to "Edit", edit_editor_path(@document.id), :class => 'btn btn-info' %>
+</div>

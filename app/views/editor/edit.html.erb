@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>
+    Edit File
+  </h1>
+  <%= form_for :document,  :url => { :action => "update" }, :html => { :method => :patch} do |f| %>
+    <% if @document.errors.any? %>
+      <% @document.errors.full_messages.each do |m| %>
+        <div class="alert alert-danger">
+          <%= m %>
+        </div>
+      <% end %>
+    <% end %>
+    <h3>
+      <%= f.label :title %><br />
+      <%= f.text_field :title %>
+    </h3>
+
+    <h4>
+      <%= f.label :body %><br />
+      <%= f.text_field :body %>
+    </h4>
+    <p>
+      <%= f.submit %>
+    </p>
+
+  <% end %>
+</div>
