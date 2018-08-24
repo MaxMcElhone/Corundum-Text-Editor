@@ -1,4 +1,7 @@
-<h1>Add File</h1>
+<div class="container">
+  <h1>
+    Add File
+  </h1>
   <%= form_for :document, path: "editor" do |f| %>
     <% if @document.errors.any? %>
       <% @document.errors.full_messages.each do |m| %>
@@ -21,3 +24,4 @@
     </p>
 
   <% end %>
+</div>
