@@ -1,7 +1,7 @@
+<h1 class="jumbotron" align="center">
+  Add File
+</h1>
 <div class="container">
-  <h1>
-    Add File
-  </h1>
   <%= form_for :document, path: "editor" do |f| %>
     <% if @document.errors.any? %>
       <% @document.errors.full_messages.each do |m| %>
@@ -12,13 +12,16 @@
     <% end %>
     <h3>
       <%= f.label :title %><br />
-      <%= f.text_field :title %>
     </h3>
-
+    <h4>
+      <%= f.text_field :title, class: "form-control" %>
+    </h4>
     <h4>
       <%= f.label :body %><br />
-      <%= f.text_field :body %>
     </h4>
+    <p>
+      <%= f.text_area :body, class: 'form-control' %>
+    </p>
     <p>
       <%= f.submit class: 'btn btn-success' %>
     </p>
