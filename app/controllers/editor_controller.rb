@@ -50,12 +50,20 @@ class EditorController < ApplicationController
 
   def fileupload
 
+<<<<<<< HEAD
     myfilename = params[:post]
     #filetitle  = File.basename(myfilename)
     if myfilename.respond_to?(:read)
       filebody     = File.read(myfilename)
     elsif myfilename.respond_to?(:path)
       filebody = File.read(myfilename.path)
+=======
+    @document = Document.new(:title => @filetitle, :body => @filebody)
+
+    if(@document.save)
+      #redirect to that page
+      redirect_to action: "show", id: @document.id
+>>>>>>> ee02fd98f4f942179ad1c0f7da604539a5e91745
     else
       render plain: myfilename.inspect
     end
