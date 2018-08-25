@@ -53,7 +53,7 @@ class EditorController < ApplicationController
     @filetitle  = File.basename(@myfilename)
     @filebody     = File.read(@myfilename)
 
-    @document = Document.new(:title => @filetitle, :boby => @filebody)
+    @document = Document.new(:title => @filetitle, :body => @filebody)
 
     if(@document.save)
       #redirect to that page
