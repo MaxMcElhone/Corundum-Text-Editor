@@ -41,7 +41,11 @@ class EditorController < ApplicationController
   end
 
   def destroy
+    @document = Document.find(params[:id])
 
+    @document.destroy
+
+    redirect_to home_path
   end
 
   #method to say what paramaters are needed to create the object
