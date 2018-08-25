@@ -48,19 +48,26 @@ class EditorController < ApplicationController
     redirect_to home_path
   end
 
-  def fileUpload
-    @myfilename = params[:uploaded_file].tempfile
-    @filetitle  = File.basename(@myfilename)
-    @filebody     = File.read(@myfilename)
+  def fileupload
 
-    @document = Document.new(:title => @filetitle, :boby => @filebody)
-
-    if(@document.save)
-      #redirect to that page
-      redirect_to action: "show", id: @document.id
+    myfilename = params[:post]
+    #filetitle  = File.basename(myfilename)
+    if myfilename.respond_to?(:read)
+      filebody     = File.read(myfilename)
+    elsif myfilename.respond_to?(:path)
+      filebody = File.read(myfilename.path)
     else
-      render 'new'
+      render plain: myfilename.inspect
     end
+
+    #@document = Document.new(:title => filetitle, :boby => filebody)
+
+    # if(@document.save)
+    #   #redirect to that page
+    #   redirect_to action: "show", id: @document.id
+    # else
+    #   render 'new'
+    # end
   end
 
   #method to say what paramaters are needed to create the object
