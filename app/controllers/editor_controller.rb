@@ -48,6 +48,10 @@ class EditorController < ApplicationController
     redirect_to home_path
   end
 
+  def upload
+
+  end
+
   def fileupload
 
     myfilename = params[:post]
