@@ -20,12 +20,12 @@
       <%= f.label :body %><br />
     </h4>
     <p>
-      <%= f.text_area :body, class: 'form-control' %>
+      <%= f.text_area :body, class: 'form-control'%>
     </p>
     <p>
       <%= f.submit class: 'btn btn-success' %>
   <% end %>
-
+      <input type="file" name="file" id="file" onchange="openFile(event)" class="btn btn-secondary">
     </p>
     <!-- <%= form_tag(:controller => :editor, :action => :fileupload, :method => :put, remote: true, multipart: true)  do  %>
       <%= file_field_tag :uploaded_file, class: "btn btn-secondary" %>
