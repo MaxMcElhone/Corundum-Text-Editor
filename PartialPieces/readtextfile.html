@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+	<head>
+	
+		<script>
+		
+			function openFile(event) {
+				var input = event.target;
+				
+				var r = new FileReader();
+				r.onload = function(){
+					var text = r.result;
+					var out = document.getElementById('output');
+					out.innerText = text;
+					console.log(reader.result.substring(0,200));
+					
+				};
+				r.readAsText(input.files[0]);
+				
+				document.getElementById('output').designMode = "on";
+			};
+		
+
+		
+		</script>
+	
+		
+	</head>
+	
+	<body>
+	
+		<div contenteditable = "true" >
+			
+				<textarea style="width:300px; height: 150px;" id="output" contenteditable="true"></textarea>
+			
+			
+		</div>
+	
+		<form>
+		
+			<input type="file" onchange='openFile(event)'/>
+			
+			
+		
+		</form>
+	
+	</body>
+
+</html>
