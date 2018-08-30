@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+	<head>
+	</head>
+	
+	<body onload='enableEditMode();'>
+		<div id="menu">
+			<button onclick="execCmd('undo');" title="Undo">&#8630;</button>
+			<button onclick="execCmd('redo');" title="Redo">&#8631;</button> 
+
+			<button onclick="execCmd('bold');" title="Bold"><b>B</b></button>
+			<button onclick="execCmd('italic');" title="Italic"><em>I</em></button>
+			<button onclick="execCmd('underline');" title="Underline"><u>U</u></button>
+			<button onclick="execCmd('strikethrough');" title="Strikethrough"><s>S</s></button>
+
+			<button onclick="execCmd('insertOrderedList');" title="Ordered List">#</button>
+			<button onclick="execCmd('insertUnorderedList');" title="Unordered List">&#8226;</button>
+
+			<button onclick="execCmd('superscript');" title="Superscript">X<sup>2</sup></button>
+			<button onclick="execCmd('subscript');" title="Subscript">X<sub>2</sub></button> 
+
+			<button onclick="execCmd('insertHorizontalRule');" title="Horizontal Rule">&#8212;</button>
+
+			<button onclick="execCommandWithArg('formatBlock', 'H1');" title="Heading">H<sub>1</sub></button>
+			<button onclick="execCommandWithArg('formatBlock', 'H2');" title="Subheading">H<sub>2</sub></button>
+			
+			<select onclick="execCmd(this.value);">
+				<option value="" selected="selected">Justify:</option>
+				<option value="justifyLeft">Left</option>
+				<option value="justifyCenter">Center</option>
+				<option value="justifyRight">Right</option>
+			</select>
+			
+			<select onclick="execCommandWithArg('fontName', this.value);">
+				<option value="" selected="selected">Font:</option>
+				<option value="Arial">Arial</option>
+				<option value="Comic Sans MS">Comic Sans MS</option>
+				<option value="Courier">Courier</option>
+				<option value="Helvetica">Helvetica</option>
+				<option value="Times New Roman">Times New Roman</option>
+				<option value="Verdana">Verdana</option>
+			</select>
+
+			<select onclick="execCommandWithArg('fontSize', this.value);">
+				<option value="" selected="selected">Font Size:</option>
+				<option value="1">10</option>
+				<option value="2">13</option>
+				<option value="3">16</option>
+				<option value="4">18</option>
+				<option value="5">24</option>
+				<option value="6">32</option>
+				<option value="7">48</option>
+			</select>
+
+			<button onclick="execCmd('createLink')"><xmp></></xmp></button>
+
+			<br>
+
+			<button onclick="execCmd('selectAll');">Select All</button>
+			<button onclick="execCmd('removeFormat');" title="note: does not remove heading or list format">Remove Formatting</button>
+
+			<button onclick="execCmd('copy');">Copy Text</button>
+		</div>
+
+		<div id="editor">
+			<iframe name="richtextField"></iframe>
+		</div>
+			
+		<script type="text/javascript">
+			function enableEditMode(){
+				richtextField.document.designMode = 'On'
+			}
+			
+			function execCmd (command) {
+				richtextField.document.execCommand(command, false, null)
+			}
+			
+			function execCommandWithArg (command, arg) {
+				richtextField.document.execCommand(command, false, arg)
+			}
+		
+			/* allow tabbing in the iframe */
+			function insertTab(event){
+				var e = event;
+				var charCode = e.which || e.keyCode;
+				alert(charCode);
+			}
+		</script>
+			
+		<style>
+			/* general formatting style */
+			#menu{
+				text-align: center;
+			}		
+
+			iframe{			
+				width: 60%;			
+				height: 500px;			
+				display: block;			
+				margin: auto;		
+			}
+
+			/* button style */
+			button{
+				background-color: white;
+    			border: none;
+    			color: black;
+    			padding: 5px 10px;
+    			text-align: center;
+    			font-family: Verdana;
+    			font-size: .85em;
+    			text-decoration: none;
+    			display: inline-block;
+			}
+
+			button:hover{
+    			color: #9b111e;
+			} 
+
+			/* dropdown list style */
+			select{
+				background-color: white;
+				border: none;
+				color: black;
+				padding: 4px 8px;
+				text-align: center;
+				font-family: Verdana;
+    			font-size: .85em;
+    			text-decoration: none;
+
+    			appearance: none;
+    			-moz-appearance: none;
+    			-webkit-appearance: none;
+			}
+
+			select:hover{
+				color: #9b111e;
+			}
+		</style>
+			
+	</body>
+</html>
