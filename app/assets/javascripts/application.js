@@ -14,6 +14,12 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require codemirror
+//= require codemirror/modes/xml
+//= require codemirror/modes/htmlmixed
+//= require codemirror/modes/javascript
+//= require codemirror/modes/ruby
+//= require codemirror/modes/haml
 //
 function Upload() {
   var file = $("#file").prop("files")[0];
@@ -40,8 +46,13 @@ function openFile(event) {
   r.readAsText(input.files[0]);
 
 };
-
 $( document ).on('turbolinks:load', function() {
+  $("textarea").each(function() {
+      CodeMirror.fromTextArea($(this).get(0), {
+        lineNumbers: true,
+        mode: "text/x-haml"
+      });
+    });
 //allow tabbing in textarea
   $("textarea").keydown(function(e) {
       if(e.keyCode === 9) { // tab was pressed
