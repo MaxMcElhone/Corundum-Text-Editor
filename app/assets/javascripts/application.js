@@ -50,7 +50,7 @@ $( document ).on('turbolinks:load', function() {
   $("textarea").each(function() {
       CodeMirror.fromTextArea($(this).get(0), {
         lineNumbers: true,
-        mode: "text/x-haml"
+        mode: "htmlmixed"
       });
     });
 //allow tabbing in textarea
