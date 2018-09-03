@@ -9,7 +9,7 @@
 					<%= d.title %>
 				</h3>
 				<h6>
-					<%= d.body %>
+					<%=raw d.body %>
 				</h6>
 				<!-- grey or blue I can't decide: grey:secondary blue:Info-->
 				<%= link_to "View", editor_path(d.id), :class => 'btn btn-info' %>
