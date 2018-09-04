@@ -74,6 +74,13 @@ class EditorController < ApplicationController
     # end
   end
 
+  def download
+    @document = Document.find(params[:id])
+    send_data @document.body,
+              filename: "#{@document.title}.html",
+              type: "text/html"
+  end
+
   #method to say what paramaters are needed to create the object
   private def document_params
     params.require(:document).permit(:title, :body)

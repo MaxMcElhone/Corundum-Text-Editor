@@ -29,6 +29,8 @@ function openFile(event) {
   reader.readAsText(event.target.files[0]);
   reader.onload = function(){ cm.setValue(reader.result); }
 };
+
+//basically the onload function
 $( document ).on('turbolinks:load', function() {
   $("textarea").each(function() {
       CodeMirror.fromTextArea($(this).get(0), {
