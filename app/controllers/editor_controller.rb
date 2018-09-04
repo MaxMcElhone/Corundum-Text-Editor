@@ -48,32 +48,6 @@ class EditorController < ApplicationController
     redirect_to home_path
   end
 
-  def upload
-
-  end
-
-  def fileupload
-
-    myfilename = params[:post]
-    #filetitle  = File.basename(myfilename)
-    if myfilename.respond_to?(:read)
-      filebody     = File.read(myfilename)
-    elsif myfilename.respond_to?(:path)
-      filebody = File.read(myfilename.path)
-    else
-      render plain: myfilename.inspect
-    end
-
-    #@document = Document.new(:title => filetitle, :boby => filebody)
-
-    # if(@document.save)
-    #   #redirect to that page
-    #   redirect_to action: "show", id: @document.id
-    # else
-    #   render 'new'
-    # end
-  end
-
   def download
     @document = Document.find(params[:id])
     send_data @document.body,

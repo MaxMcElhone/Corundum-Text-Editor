@@ -4,8 +4,6 @@ Rails.application.routes.draw do
   root 'editor#index', as: 'home'
 
   #this needs to be above resources to be called correctly.
-  get "editor/upload", as: 'upload'
-  post "editor/upload"     => "editor#fileupload"
   get "editor/info", as: 'info'
   get "editor/:id/download", to: "editor#download", as: 'download'
   #creates most of the paths for the editor class
