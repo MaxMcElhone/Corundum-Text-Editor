@@ -8,21 +8,11 @@
 				<h4>
 					<%= d.title %>
 				</h4>
-				<%=raw d.body %><br><br>
-				<!-- grey or blue I can't decide: grey:secondary blue:Info-->
+				<%=raw d.body %>
+				<br><br>
 				<%= link_to "View", editor_path(d.id), :class => 'btn btn-info' %>
 			</div>
 		</div>
 		<br>
 	<% end %>
 </div>
-
-	<!-- <div>
-		<form action="#">
-			<input type="text"  />
-			<textarea style="resize:none;" name="textedit">
-
-			</textarea>
-
-		</form>
-	</div> -->
