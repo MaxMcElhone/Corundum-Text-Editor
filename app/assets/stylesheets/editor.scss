@@ -6,8 +6,27 @@
 }
 
 .header h2.bg-danger{
-	background: linear-gradient(to bottom, #343a40, #9b111e)
+	background: linear-gradient(to top, #9b111e, #343a40)
 }
+
 h2 {
 	color: darkgrey !important;
+}
+
+body {
+	background: linear-gradient(to bottom, #D8D8D8, #D8D8D8 50%, #ffffff);
+	height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+a {
+	transition: 0.1s;
+	color: #BABABA;
+}
+
+a:hover{
+	color: #D7111E;
+	text-decoration: none;
 }
