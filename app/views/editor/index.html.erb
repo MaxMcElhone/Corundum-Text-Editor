@@ -1,16 +1,14 @@
-<h1 class="jumbotron w-100" align="center">
-	All Documents
-</h1>
+<div class="header" align="center">
+	<h2 class="bg-danger pt-2 pb-2">Your Documents</h2>
+</div>
 <div class="container">
 	<% @documents.each do |d| %>
 		<div class="card bg-dark text-white">
 			<div class="card-body">
-				<h3>
+				<h4>
 					<%= d.title %>
-				</h3>
-				<h6>
-					<%=raw d.body %>
-				</h6>
+				</h4>
+				<%=raw d.body %><br><br>
 				<!-- grey or blue I can't decide: grey:secondary blue:Info-->
 				<%= link_to "View", editor_path(d.id), :class => 'btn btn-info' %>
 			</div>

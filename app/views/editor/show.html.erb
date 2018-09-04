@@ -1,13 +1,16 @@
-<h2 class="jumbotron mb-0" align="center">
-  <%= @document.title %>
-</h2>
-<div class="container-fluid bg-dark text-white pt-3 pb-3">
-
-  <div class="container">
-    <%=raw @document.body %>
-    <br />
-    <br>
-    <%= link_to "Edit", edit_editor_path(@document.id), :class => 'btn btn-info' %>
-    <%= link_to "Delete", editor_path(@document), method: :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-danger' %>
+<div class="header" align="center">
+  <h2 class="bg-danger pt-2 pb-2">Edit Documents</h2>
+</div>
+<div class="container">
+  <div class="card bg-dark text-white">
+      <div class="card-body">
+        <h5><%=raw @document.title %></h5>
+        <br>
+        <%=raw @document.body %>
+        <br />
+        <br>
+        <%= link_to "Edit", edit_editor_path(@document.id), :class => 'btn btn-info' %>
+        <%= link_to "Delete", editor_path(@document), method: :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-danger' %>
+      </div>
   </div>
 </div>

@@ -1,6 +1,6 @@
-<h1 class="jumbotron" align="center">
-  Edit File
-</h1>
+<div class="header" align="center">
+  <h2 class="bg-danger pt-2 pb-2">Edit File
+</div>
 <div class="container">
   <%= form_for :document,  :url => { :action => "update" }, :html => { :method => :patch} do |f| %>
     <% if @document.errors.any? %>

@@ -1,6 +1,6 @@
-<h1 class="jumbotron" align="center">
-  Add File
-</h1>
+<div class="header" align="center">
+  <h2 class="bg-danger pt-2 pb-2">Add File</h2>
+</div>
 <div class="container">
   <%= form_for :document, path: "editor" do |f| %>
     <% if @document.errors.any? %>
@@ -10,13 +10,13 @@
         </div>
       <% end %>
     <% end %>
-    <h3>
+    <h3 class="text-muted">
       <%= f.label :title %><br />
     </h3>
     <h4>
       <%= f.text_field :title, class: "form-control" %>
     </h4>
-    <h4>
+    <h4 class="text-muted">
       <%= f.label :body %><br />
     </h4>
     <p>
