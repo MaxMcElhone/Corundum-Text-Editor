@@ -21,7 +21,7 @@
 //= require codemirror/modes/ruby
 //= require codemirror/modes/haml
 //
-
+var editor;
 //method steven wrote to handle uploaded files slightly edited
 function openFile(event) {
   var reader = new FileReader();
@@ -30,10 +30,15 @@ function openFile(event) {
   reader.onload = function(){ cm.setValue(reader.result); }
 };
 
+//function to change the language used for highlighting
+function ChangeHighlighting(){
+  editor.setOption("mode", "text/javascript");
+  //CodeMirror.autoLoadMode(editor, "javascript");
+}
 //basically the onload function
 $( document ).on('turbolinks:load', function() {
   $("textarea").each(function() {
-      CodeMirror.fromTextArea($(this).get(0), {
+      editor = CodeMirror.fromTextArea($(this).get(0), {
         lineNumbers: true,
         mode: "htmlmixed"
       });
