@@ -18,6 +18,24 @@
     </h4>
     <h4 class="text-muted">
       <%= f.label :body %><br />
+      <select class="form-control" onchange="ChangeHighlighting()" id="highlight">
+        <option value="htmlmixed">Select Language...</option>
+        <option value="htmlmixed">
+          html
+        </option>
+        <option value="text/javascript">
+          javascript
+        </option>
+        <option value="text/x-haml">
+          haml
+        </option>
+        <option value="text/x-ruby">
+          Ruby
+        </option>
+        <option value="text/xml">
+          xml
+        </option>
+      </select>
     </h4>
     <p>
       <%= f.text_area :body, class: 'form-control', rows: '10' %>

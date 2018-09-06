@@ -32,7 +32,9 @@ function openFile(event) {
 
 //function to change the language used for highlighting
 function ChangeHighlighting(){
-  editor.setOption("mode", "text/javascript");
+  var e = document.getElementById('highlight');
+  var mode = e.options[e.selectedIndex].value;
+  editor.setOption("mode", mode);
   //CodeMirror.autoLoadMode(editor, "javascript");
 }
 //basically the onload function
